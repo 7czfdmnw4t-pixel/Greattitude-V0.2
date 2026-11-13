@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Greattitude App Icon Cropped.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
