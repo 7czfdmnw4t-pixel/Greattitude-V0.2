@@ -32,6 +32,11 @@ struct ExperienceActionsView: View {
                                 .font(.system(size: 14, weight: .medium))
                                 .foregroundStyle(GreattitudeTheme.inkMuted)
 
+                            Text("Think back to this experience. THINK and FEEL the gratitude, success, or reward. Talk yourself through it with positivity, and treat yourself as you would someone you love.")
+                                .font(.system(size: 14))
+                                .foregroundStyle(GreattitudeTheme.inkMuted)
+                                .lineSpacing(3)
+
                             ForEach(Array(ReflectionPrompt.allCases.prefix(revealedCount))) { prompt in
                                 VStack(alignment: .leading, spacing: 8) {
                                     Text(prompt.revisitHeading)
