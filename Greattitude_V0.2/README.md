@@ -6,7 +6,7 @@ Open `Greattitude.xcodeproj` in Xcode, pick an iPhone simulator **or** My Mac, a
 
 ## What changed from V0.1
 
-- Home is two actions plus a quiet **Reminder settings** link.
+- Home is two actions (new experience above revisit), a short retention note, an About info control, and quiet **Reminder settings** / **Privacy** links.
 - **Revisit** is a dated list of question 1 answers, oldest first. You choose the entry.
 - Inside an entry: **Reflect on this**, **Edit experience**, **Delete experience**.
 - Reflection reveals answers in order: first two, then the third, then all four, then **Finish**.

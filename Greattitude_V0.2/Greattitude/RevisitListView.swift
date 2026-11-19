@@ -37,6 +37,11 @@ struct RevisitListView: View {
                             .foregroundStyle(GreattitudeTheme.inkMuted)
                             .lineSpacing(3)
 
+                        Text("Review these experiences as often as you can. Ideally, revisit each experience at least once a day. You really want to hard-wire the memory into your brain before the experience drops off the list of 10.")
+                            .font(.system(size: 14))
+                            .foregroundStyle(GreattitudeTheme.inkMuted)
+                            .lineSpacing(3)
+
                         LazyVStack(spacing: 10) {
                             ForEach(store.oldestFirst) { experience in
                                 Button {

@@ -81,7 +81,35 @@ enum ReflectionPrompt: Int, CaseIterable, Identifiable {
         case .tellSomeone:
             return "What would you say to someone else who had this experience?"
         case .whatYouLearned:
-            return "What does this show you — what have you learnt from this?"
+            return "What does this experience show you - What have you learnt from this?"
+        }
+    }
+
+    /// Unbolded coaching line shown under the step question.
+    var entryGuidance: String {
+        switch self {
+        case .experience:
+            return "Look for the day-to-day experiences that often pass us by. Short and sharp is fine."
+        case .whyItWasGood:
+            return "You should add detail here that describes what it was about this experience that made it positive."
+        case .tellSomeone:
+            return "Think about what you would say to someone else if you heard them say they had experienced the same thing or achieved the same success."
+        case .whatYouLearned:
+            return "Think about what this experience is demonstrating about you, your life, your successes, your awesomeness!"
+        }
+    }
+
+    /// Italic example lines for the entry step.
+    var entryExamples: String {
+        switch self {
+        case .experience:
+            return "I went for a run; I had a nice hot shower; I messaged my friend to see how she was going; My daughter gave me an unprompted hug"
+        case .whyItWasGood:
+            return "Feeling motivated like other runners after a good run; The comfort and privilege of hot water; Knowing I checked in on a friend; Feeling loved in that hug"
+        case .tellSomeone:
+            return "Well done on getting out for a run; Enjoy that hot shower; You’re a good friend for checking in"
+        case .whatYouLearned:
+            return "I’m determined; I’m grateful for hot water; I have good friends; I love my kids and family"
         }
     }
 

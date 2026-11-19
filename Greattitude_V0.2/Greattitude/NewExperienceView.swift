@@ -30,26 +30,41 @@ struct NewExperienceView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 20) {
-                Text("Question \(step) of 4")
-                    .font(.subheadline)
-                    .foregroundStyle(GreattitudeTheme.inkMuted)
+            VStack(spacing: 0) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Step \(step)")
+                            .font(.subheadline)
+                            .foregroundStyle(GreattitudeTheme.inkMuted)
 
-                ProgressView(value: Double(step), total: 4)
-                    .tint(GreattitudeTheme.primary)
+                        ProgressView(value: Double(step), total: 4)
+                            .tint(GreattitudeTheme.primary)
 
-                Text(prompt.entryQuestion)
-                    .font(GreattitudeTheme.heading)
-                    .foregroundStyle(GreattitudeTheme.ink)
+                        Text(prompt.entryQuestion)
+                            .font(GreattitudeTheme.heading)
+                            .foregroundStyle(GreattitudeTheme.ink)
 
-                editor
+                        Text(prompt.entryGuidance)
+                            .font(.system(size: 15, weight: .regular))
+                            .foregroundStyle(GreattitudeTheme.inkMuted)
+                            .lineSpacing(3)
 
-                Spacer(minLength: 8)
+                        Text(prompt.entryExamples)
+                            .font(.system(size: 14).italic())
+                            .foregroundStyle(GreattitudeTheme.inkMuted)
+                            .lineSpacing(3)
 
-                if let saveError {
-                    Text(saveError)
-                        .foregroundStyle(.red)
-                        .font(.subheadline)
+                        editor
+
+                        if let saveError {
+                            Text(saveError)
+                                .foregroundStyle(.red)
+                                .font(.subheadline)
+                        }
+                    }
+                    .padding(24)
+                    .frame(maxWidth: 560, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
                 HStack(spacing: 12) {
@@ -67,10 +82,12 @@ struct NewExperienceView: View {
                     .buttonStyle(PrimaryActionStyle(enabled: currentAnswerIsComplete))
                     .disabled(!currentAnswerIsComplete)
                 }
+                .padding(.horizontal, 24)
+                .padding(.bottom, 24)
+                .padding(.top, 8)
+                .frame(maxWidth: 560)
+                .frame(maxWidth: .infinity)
             }
-            .padding(24)
-            .frame(maxWidth: 560)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .greattitudeScreen()
             .navigationTitle("New experience")
             .toolbar {
@@ -102,7 +119,7 @@ struct NewExperienceView: View {
             .font(.system(size: 17))
             .scrollContentBackground(.hidden)
             .padding(10)
-            .frame(minHeight: 180)
+            .frame(minHeight: 160)
             .background(
                 GreattitudeTheme.card,
                 in: RoundedRectangle(cornerRadius: 14, style: .continuous)
